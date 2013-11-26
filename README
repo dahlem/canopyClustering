@@ -1,0 +1,61 @@
+README
+
+This project implements canopy clustering as described by [1]. The
+clustering is performed over a list of string sequences using a
+compression-based distance function [2]. The code is implemented in
+C++ using boost libraries and OpenMP for the parallelisation of the
+distance computations.
+
+
+CONFIGURATION
+
+OpenMP can be enabled using the --enable-openmp flag at the
+configuration step.
+
+
+EXECUTION
+
+The following command-line parameters are provided:
+
+General Configuration:
+  --help                produce help message
+  --version             show the version
+
+I/O Configuration:
+  --result arg (=./results) results directory.
+  --sequence arg            sequence file.
+
+Canopy Configuration:
+  --t1 arg (=0.25)      t2
+  --t2 arg (=0.5)       t1, where t1 > t2
+  --sample arg (=0)     Sample distance calculations
+  --pairs arg           pairs for distance calculations
+
+The sequence file has two columns separated by a comma. The first one
+is the identifier for the sequence and the second column is the
+string sequence.
+
+If a pairs file is specified given the format i,j where i and j are
+sequence identifiers, then the distance for those pairs is
+computed. If a sample integer N is provided then the distances between
+N sequences is computed. Otherwise, the canopies are computed over all
+sequences and an output is produced in the format i,j,d where i and j
+are sequence identifiers and d is the distance between those. Only
+one-directional distances are computed (upper triangular form) even
+though the NCD distance computation [2] may not be exactly
+equal. However, for large enough sequences this in-equality is
+negligible.
+
+
+
+[1] Efficient clustering of high-dimensional data sets with
+    application to reference matching
+    by: Andrew McCallum, Kamal Nigam, Lyle H. Ungar
+    In Proceedings of the sixth ACM SIGKDD international conference on
+    Knowledge discovery and data mining (2000), pp. 169-178,
+    doi:10.1145/347090.347123
+
+[2] Clustering by compression
+    by: R. Cilibrasi, P. M. B. Vitanyi
+    Information Theory, IEEE Transactions on, Vol. 51, No. 4. (April
+    2005), pp. 1523-1545, doi:10.1109/tit.2005.844059
