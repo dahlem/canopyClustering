@@ -1,4 +1,4 @@
-// Copyright (C) 2013 Dominik Dahlem <dahlem@mit.edu>
+// Copyright (C) 2013 Dominik Dahlem <Dominik.Dahlem@gmail.com>
 //
 // This program is free software; you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by

@@ -1,4 +1,4 @@
-# Copyright (C) 2013 Dominik Dahlem <dahlem@mit.edu>
+# Copyright (C) 2013 Dominik Dahlem <Dominik.Dahlem@gmail.com>
 #  
 # This file is free software; as a special exception the author gives
 # unlimited permission to copy and/or distribute it, with or without 
@@ -11,7 +11,7 @@
 AC_PREREQ(2.61)
 AC_INIT([Canopy Clustering],
         [0.3],
-        [Dominik Dahlem dahlem@mit.edu], 
+        [Dominik Dahlem Dominik.Dahlem@gmail.com], 
         [canopy])
 
 AC_CONFIG_AUX_DIR(config)
